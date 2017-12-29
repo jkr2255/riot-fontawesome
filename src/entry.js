@@ -7,7 +7,9 @@ import parseClasses from './parsers/classes';
 
 fontawesome.noAuto();
 
-const iconTag = riot.tag('font-awesome-icon', '', '', '', function(opts){
+const css = fontawesome.dom.css();
+
+const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;
   const render = () => {
     const icon = normalizeIconArgs(opts.icon);
