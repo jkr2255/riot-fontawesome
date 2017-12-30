@@ -35,3 +35,10 @@ Once required, `<font-awesome-icon>` tag can be used. Parameters are:
 * `size=(md, lg, 2x...10x)` ... specify size of icon.
 * `rorarion=(degree)` ... rorate icon.
 * `transform=(transform object or string)` ... apply transformation for icon.
+
+### Masking
+
+You can use [masking](https://fontawesome.com/how-to-use/svg-with-js#masking) in this module.
+
+`<font-awesome-icon icon='inside icon' mask='outside icon'></font-awesome-icon>` will do this.
+Note that `transform` is applied only for inside `icon`.

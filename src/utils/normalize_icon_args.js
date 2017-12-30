@@ -1,7 +1,7 @@
 'use strict';
 
 export default function normalizeIconArgs (icon) {
-  if (icon === null) {
+  if (!icon) {
     return null
   }
 

@@ -16,7 +16,8 @@ const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
     const icon = normalizeIconArgs(opts.icon);
     const classes = parseClasses(opts);
     const transform = parseTransform(opts.transform);
-    const renderedIcon = fontawesome.icon(icon, {classes, transform});
+    const mask = normalizeIconArgs(opts.mask);
+    const renderedIcon = fontawesome.icon(icon, {classes, transform, mask});
     if(!renderedIcon) return;
     const first = tag.root.firstChild;
     if(first) {
