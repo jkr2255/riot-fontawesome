@@ -34,3 +34,4 @@ Once required, `<font-awesome-icon>` tag can be used. Parameters are:
 * `flip-vertical=(truthy value)` ... flip icon vertically.
 * `size=(md, lg, 2x...10x)` ... specify size of icon.
 * `rorarion=(degree)` ... rorate icon.
+* `transform=(transform object or string)` ... apply transformation for icon.
