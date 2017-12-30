@@ -23,12 +23,15 @@
     "presets": ["env"]
   },
   "repository": {
-    "type": "git",
+    "type": "http",
     "url": "https://github.com/jkr2255/riot-fontawesome.git"
   },
   "keywords": [
     "riot",
     "fontawesome"
   ],
-  "homepage": "https://github.com/jkr2255/riot-fontawesome"
+  "homepage": "https://github.com/jkr2255/riot-fontawesome",
+  "bugs": {
+    "url": "https://github.com/jkr2255/riot-fontawesome/issues"
+  }
 }
