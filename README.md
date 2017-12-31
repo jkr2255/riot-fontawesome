@@ -35,6 +35,8 @@ Once required, `<font-awesome-icon>` tag can be used. Parameters are:
 * `size=(md, lg, 2x...10x)` ... specify size of icon.
 * `rorarion=(degree)` ... rorate icon.
 * `transform=(transform object or string)` ... apply transformation for icon.
+* `icon-class=(classes separated by space)` ... specify additonal classes to icon.
+* `icon-style=(inline css)` ... specify additional styles to icon.
 
 ### Masking
 
