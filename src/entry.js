@@ -13,10 +13,11 @@ const css = fontawesome.dom.css();
 const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;
   const render = () => {
-    const icon = normalizeIconArgs(opts.icon);
-    const classes = parseClasses(opts);
-    const transform = parseTransform(opts.transform);
-    const mask = normalizeIconArgs(opts.mask);
+    const target = tag.parent ? opts : tag;
+    const icon = normalizeIconArgs(target.icon);
+    const classes = parseClasses(target);
+    const transform = parseTransform(target.transform);
+    const mask = normalizeIconArgs(target.mask);
     const renderedIcon = fontawesome.icon(icon, {classes, transform, mask});
     if(!renderedIcon) return;
     const first = tag.root.firstChild;
@@ -28,6 +29,9 @@ const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
   }
   tag.on('mount', render);
   tag.on('update', render);
+  if(!tag.parent) {
+    Object.assign(tag, opts);
+  }
 });
 
 export default iconTag;

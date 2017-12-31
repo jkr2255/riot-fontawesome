@@ -30,11 +30,29 @@
   <p>
     <font-awesome-icon icon='headphones' mask='square'></font-awesome-icon>
   </p>
-  <script src="https://cdn.jsdelivr.net/npm/riot@3.7.4/riot.min.js"></script>
+  <h2>Dynamic change (inside Riot tag)</h2>
+  <p>
+    <icon-included></icon-included>
+  </p>
+  <h2>Dynamic change (directly control tag)</h2>
+  <p>
+    <font-awesome-icon icon='camera' id='control-test'></font-awesome-icon>
+  </p>
+  <script src="https://cdn.jsdelivr.net/npm/riot@3.7.4/riot+compiler.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <script src="../index.js"></script>
+  <script src="icon-included.tag" type="riot/tag"></script>
   <script>
-    riot.mount('*');
+    riot.compile(function(){
+      riot.mount('*');
+      var controlTag = riot.mount('#control-test', 'font-awesome-icon')[0];
+      console.log(controlTag)
+      var candidates = ['camera', 'cut', 'save']
+      setInterval(function(){
+        controlTag.icon = candidates[Math.floor(Math.random() * candidates.length)];
+        controlTag.update();
+      }, 1000);
+    });
   </script>
 </body>
 </html>

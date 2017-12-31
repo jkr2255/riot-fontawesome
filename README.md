@@ -43,8 +43,15 @@ You can use [masking](https://fontawesome.com/how-to-use/svg-with-js#masking) in
 `<font-awesome-icon icon='inside icon' mask='outside icon'></font-awesome-icon>` will do this.
 Note that `transform` is applied only for inside `icon`.
 
+### Change icon from program
+
+Inside another Riot tags, `<font-awesome-icon>` tag sees `opts` for parameter.
+`<font-awesome-icon icon={outside.variable} />` will work as intended.
+
+Using `<font-awesome-icon>` directly inside HTML, tag uses tag's instance values.
+If you want to change icon, try updating like `iconTag.update({icon: 'icon-name'})`.
+
 ## TODO
 
 * Add test
 * Support layers
-* Support programatical change of icon
