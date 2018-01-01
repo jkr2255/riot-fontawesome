@@ -2491,6 +2491,12 @@ riot-observable@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/riot-observable/-/riot-observable-3.0.0.tgz#8bbd2daf72a2141bb043082df4023dc504bad2eb"
 
+riot-tag-loader@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/riot-tag-loader/-/riot-tag-loader-2.0.2.tgz#ba7d9a531b16f197f66b574e6e0b3d3602197a5d"
+  dependencies:
+    loader-utils "^1.1.0"
+
 riot-tmpl@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/riot-tmpl/-/riot-tmpl-3.0.8.tgz#dd654e72a3a1520cb009cbef70c73856ded584a6"

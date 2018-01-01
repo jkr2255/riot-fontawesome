@@ -14,8 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|tag)$/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.tag$/,
+        use: 'riot-tag-loader'
       }
     ]
   },

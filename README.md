@@ -53,6 +53,17 @@ Inside another Riot tags, `<font-awesome-icon>` tag sees `opts` for parameter.
 Using `<font-awesome-icon>` directly inside HTML, tag uses tag's instance values.
 If you want to change icon, try updating like `iconTag.update({icon: 'icon-name'})`.
 
+### Layers
+
+`<font-awesome-layers>` tag can be used for layer stacking.
+
+```html
+<font-awesome-layers fixed-width='1'>
+  <font-awesome-icon icon='bookmark'></font-awesome-icon>
+  <font-awesome-icon icon='heart' transform='shrink-10 up-2' style='color:Tomato'></font-awesome-icon>
+</font-awesome-layers>
+```
+
 ## TODO
 
 * Add test
