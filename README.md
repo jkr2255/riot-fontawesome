@@ -53,7 +53,7 @@ Inside another Riot tags, `<font-awesome-icon>` tag sees `opts` for parameter.
 Using `<font-awesome-icon>` directly inside HTML, tag uses tag's instance values.
 If you want to change icon, try updating like `iconTag.update({icon: 'icon-name'})`.
 
-### Layers
+### Layers & Texts
 
 `<font-awesome-layers>` tag can be used for layer stacking.
 
@@ -64,7 +64,13 @@ If you want to change icon, try updating like `iconTag.update({icon: 'icon-name'
 </font-awesome-layers>
 ```
 
+In layers, you can use `<font-awesome-text>` tag just like `<font-awesome-icon>`. parameters are:
+
+* `text` ... displaying text.
+* `text-class` ... additional classes for text.
+* `text-style` ... additional styles for text.
+* `transform` ... apply transformation for icon.
+
 ## TODO
 
-* Add test
-* Support layers
+* Add automated test
