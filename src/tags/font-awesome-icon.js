@@ -2,15 +2,7 @@
 
 import riot from 'riot';
 import fontawesome from '@fortawesome/fontawesome';
-import normalizeIconArgs from '../utils/normalize_icon_args';
-import parseClasses from '../parsers/classes';
-import parseTransform from '../parsers/transform';
-import parseStyle from '../parsers/style'
-
-const classToArray = param => {
-  if(Array.isArray(param)) return param;
-  return String(param).trim().split(' ');
-}
+import parseWholeIcon from '../parsers/whole_icon'
 
 const css = fontawesome.dom.css();
 
@@ -18,13 +10,7 @@ const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;
   const render = () => {
     const target = tag.parent ? opts : tag;
-    const icon = normalizeIconArgs(target.icon);
-    const classes = parseClasses(target);
-    classes.push(...classToArray(target.iconClass));
-    const transform = parseTransform(target.transform);
-    const mask = normalizeIconArgs(target.mask);
-    const styles = parseStyle(target.iconStyle);
-    const renderedIcon = fontawesome.icon(icon, {classes, transform, mask, styles});
+    const renderedIcon = parseWholeIcon(target);
     if(!renderedIcon) return;
     const first = tag.root.firstChild;
     if(first) {
