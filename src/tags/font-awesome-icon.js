@@ -6,7 +6,7 @@ import parseWholeIcon from '../parsers/whole_icon'
 
 const css = fontawesome.dom.css();
 
-const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
+riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;
   const render = () => {
     const target = tag.parent ? opts : tag;
@@ -25,5 +25,3 @@ const iconTag = riot.tag('font-awesome-icon', '', css, '', function(opts){
     Object.assign(tag, opts);
   }
 });
-
-export default iconTag;
