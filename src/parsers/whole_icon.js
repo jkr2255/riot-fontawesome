@@ -10,7 +10,7 @@ import classToArray from '../utils/class_to_array'
 export default function(target) {
   const icon = normalizeIconArgs(target.icon);
   const classes = parseClasses(target);
-  classes.push(...classToArray(target.iconClass));
+  classes.push(...classToArray(target.iconClass || ''));
   const transform = parseTransform(target.transform);
   const mask = normalizeIconArgs(target.mask);
   const styles = parseStyle(target.iconStyle);
