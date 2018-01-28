@@ -1,22 +1,30 @@
 'use strict';
 
-import riot from 'riot';
 import fontawesome from '@fortawesome/fontawesome';
-import parseWholeIcon from '../parsers/whole_icon'
+import riot from 'riot';
+
+import argsToJSON from '../utils/args_to_json';
+import domGenerator from '../dom/generator';
+import parseIconArgs from '../parsers/icon_args';
 
 const css = fontawesome.dom.css();
 
 riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;
+  let oldArgsJSON = null;
   const render = () => {
     const target = tag.parent ? opts : tag;
-    const renderedIcon = parseWholeIcon(target);
-    if(!renderedIcon) return;
+    const iconArgs = parseIconArgs(target);
+    const argsJSON = argsToJSON(iconArgs);
+    if(argsJSON === oldArgsJSON) return;
+    oldArgsJSON = argsJSON;
+    const dom = domGenerator(iconArgs);
+    if(!dom) return;
     const first = tag.root.firstChild;
     if(first) {
-      tag.root.replaceChild(renderedIcon.node[0], tag.root.firstChild);
+      tag.root.replaceChild(dom, tag.root.firstChild);
     } else {
-      tag.root.appendChild(renderedIcon.node[0]);
+      tag.root.appendChild(dom);
     }
   }
   tag.on('mount', render);
