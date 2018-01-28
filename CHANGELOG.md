@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6 (2018/01/28)
+
+* Externalize `sorted-json-stringify` (needs code addition if using directly from browser)
+
 ## 0.0.5 (2018/01/28)
 
 * Packager changed from Webpack to Rollup

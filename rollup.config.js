@@ -18,11 +18,13 @@ export default {
     format: 'umd',
     name: 'RiotFontAwesome',
     globals: {
+      'sorted-json-stringify': 'sortedJSONStringify',
       riot: 'riot',
       '@fortawesome/fontawesome': 'FontAwesome'
     }
   },
   external: [
+    'sorted-json-stringify',
     'riot',
     '@fortawesome/fontawesome'
   ]

@@ -1702,9 +1702,9 @@ sntp@1.x.x:
   dependencies:
     hoek "2.x.x"
 
-sorted-json-stringify@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/sorted-json-stringify/-/sorted-json-stringify-0.0.1.tgz#1c2cdc3d6478b87ccd542a67b65ef061041b6383"
+sorted-json-stringify@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/sorted-json-stringify/-/sorted-json-stringify-0.0.2.tgz#cef5cfdf6dd0292fe226aa483fe1fb6229be67c9"
 
 source-map-support@^0.4.15:
   version "0.4.18"

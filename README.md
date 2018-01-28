@@ -11,6 +11,7 @@ This module is a UMD module, so you can directly include from browser.
 ```html
   <script src="https://cdn.jsdelivr.net/npm/riot@3.x.y/riot.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sorted-json-stringify@0.0.2/index.js"></script>
   <script src="path/to/riot-fontawesome.js"></script>
 ```
 
@@ -18,6 +19,7 @@ This module is a UMD module, so you can directly include from browser.
 
 * Riot.js 3.x
 * Font Awesome 5
+* [jkr2255/sorted-json-stringify](https://github.com/jkr2255/sorted-json-stringify)
 
 ## Usage
 
