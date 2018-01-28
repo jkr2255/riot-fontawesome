@@ -53,11 +53,15 @@
       <font-awesome-text text='NEW' transform='shrink-11.5 rotate--30' text-class='fa-inverse'></font-awesome-icon>
     </font-awesome-layers>
   </p>
+  <h2>Mutation test (with/without cache)</h2>
+  <mutation-test></mutation-test>
   <script src="https://cdn.jsdelivr.net/npm/riot@3.7.4/riot+compiler.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sorted-json-stringify@0.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/setimmediate@1.0.5/setImmediate.min.js"></script>
   <script src="../index.js"></script>
   <script src="icon-included.tag" type="riot/tag"></script>
+  <script src="mutation-test.tag" type="riot/tag"></script>
   <script>
     riot.compile(function(){
       riot.mount('*');

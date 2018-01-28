@@ -73,6 +73,20 @@ In layers, you can use `<font-awesome-text>` tag just like `<font-awesome-icon>`
 * `text-style` ... additional styles for text.
 * `transform` ... apply transformation for icon.
 
+### Caching
+
+In many of the use cases, icon patterns used in pages are limited. So caching SVG nodes will increase performance.
+
+But, when using many icons like FontAwesome demonstration, or performing transformations with unlimited parameters,
+cache might be floddoed up.
+
+So, there are some settings related to caches.
+
+* `RiotFontAwesome.config.iconCache` ... whether to cache icons. (default true)
+* `RiotFontAwesome.config.textCache` ... whether to cache texts. (default false)
+* `cache="always/none"` in tag ... tag with `cache="always"` is cached regardless of `config`. `cache="none"` is never cached.
+* `RiotFontAwesome.cache.clear()` ... purge cache.
+
 ## TODO
 
 * Add automated test

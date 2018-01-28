@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0 (2018/01/29)
+
+* removed unintentional `undefined` class.
+* Caching SVG nodes (see README).
+
 ## 0.0.6 (2018/01/28)
 
 * Externalize `sorted-json-stringify` (needs code addition if using directly from browser)
