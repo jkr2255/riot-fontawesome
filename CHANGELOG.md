@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.0.4 (2017/01/02)
+## 0.0.5 (2018/01/28)
+
+* Packager changed from Webpack to Rollup
+* Update DOM only when parameters are changed
+
+## 0.0.4 (2018/01/02)
 
 * Add layers (`<font-awesome-layers>` & `<font-awesome-text>` tags)
 * Add `icon-style` and `icon-class` attributes
