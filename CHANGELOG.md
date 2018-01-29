@@ -1,5 +1,9 @@
 # Changelog
 
+## Master (unreleased)
+
+* Optimization: sort classes only once, on generation.
+
 ## 0.1.1 (2018/01/29)
 
 * fix: `icon-class` and `icon-style` not applied
