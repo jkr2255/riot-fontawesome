@@ -90,3 +90,7 @@ So, there are some settings related to caches.
 ## TODO
 
 * Add automated test
+
+### Known problems
+
+* Icons without `fontawesome.library.add()` cannot be rendered (I'm wondering if this functionality is necessary...)
