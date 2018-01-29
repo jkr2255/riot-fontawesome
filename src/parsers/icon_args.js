@@ -3,7 +3,7 @@ import parseCommonArgs from './common_args';
 
 
 export default function parseIconArgs(target) {
-  const args = parseCommonArgs(target);
+  const args = parseCommonArgs(target, 'icon');
   args.icon = normalizeIconArgs(target.icon);
   args.mask = normalizeIconArgs(target.mask);
   return args;
