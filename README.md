@@ -10,8 +10,8 @@ This module is a UMD module, so you can directly include from browser.
 
 ```html
   <script src="https://cdn.jsdelivr.net/npm/riot@3.x.y/riot.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sorted-json-stringify@0.0.2/index.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.x.y/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sorted-json-stringify@0.1.0/index.js"></script>
   <script src="path/to/riot-fontawesome.js"></script>
 ```
 

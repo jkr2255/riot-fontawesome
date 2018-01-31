@@ -1,8 +1,10 @@
 # Changelog
 
-## Master (unreleased)
+## 0.1.2 (2018/01/31)
 
 * Optimization: sort classes only once, on generation.
+* Update `sorted-json-stringify` dependency
+* Make both `index.js` and `index.min.js`.
 
 ## 0.1.1 (2018/01/29)
 

@@ -1,1 +1,353 @@
-!function(t,r){"object"==typeof exports&&"undefined"!=typeof module?r(exports,require("@fortawesome/fontawesome"),require("sorted-json-stringify"),require("riot")):"function"==typeof define&&define.amd?define(["exports","@fortawesome/fontawesome","sorted-json-stringify","riot"],r):r(t.RiotFontAwesome={},t.FontAwesome,t.sortedJSONStringify,t.riot)}(this,function(t,r,e,n){"use strict";r=r&&r.hasOwnProperty("default")?r.default:r,e=e&&e.hasOwnProperty("default")?e.default:e,n=n&&n.hasOwnProperty("default")?n.default:n;var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},i=Object.assign||function(t){for(var r=1;r<arguments.length;r++){var e=arguments[r];for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n])}return t},a=function(t){if(Array.isArray(t)){for(var r=0,e=Array(t.length);r<t.length;r++)e[r]=t[r];return e}return Array.from(t)};function f(t){if(!t)return null;if("object"===(void 0===t?"undefined":o(t))&&t.prefix&&t.iconName)return t;if(Array.isArray(t)&&2===t.length)return{prefix:t[0],iconName:t[1]};if("string"==typeof t){if(-1!==t.indexOf(" ")){var r=t.split(" ");return{prefix:r[0],iconName:r[1]}}return{prefix:"fas",iconName:t}}}var u={spin:"fa-spin",pulse:"fa-pulse",border:"fa-border",fixedWidth:"fa-fw",listItem:"fa-li",flipHorizontal:"fa-flip-horizontal",flipVertical:"fa-flip-vertical",pull:function(t,r){return r.push("fa-pull-"+t)},size:function(t,r){return r.push("fa-"+t)},rotation:function(t,r){return r.push("fa-rotate-"+t)}};var s=/^([^:]+):(.*)$/,c=function(t,r){var e=s.exec(t);if(e){var n=e[1].trim(),o=e[2].trim();r[n]=o}};function l(t,e){var n,i,f,s=(n=t,i=[],Object.keys(u).forEach(function(t){var r=n[t];if(r){var e=u[t];"string"!=typeof e?e(r,i):i.push(e)}}),i);return s.push.apply(s,a((f=t[e+"Class"]||"",Array.isArray(f)?f:String(f).trim().split(/[ \r\n\t\f]+/)))),s.sort(),{classes:s,transform:function(t){return"object"===(void 0===t?"undefined":o(t))?t:r.parse.transform(t||"")}(t.transform),styles:function(t){if(!t)return{};if("string"!=typeof t)return t;var r={};return t.split(";").forEach(function(t){return c(t,r)}),r}(t[e+"Style"])}}function p(t){var r=l(t,"icon");return r.icon=f(t.icon),r.mask=f(t.mask),r}function y(t){return e(t,function(r,e){return this!==t||!e||"icon"!==r&&"mask"!==r?e:{prefix:e.prefix,iconName:e.iconName}})}var d={iconCache:!0,textCache:!1},v={};var h=function(t,r){var e=function(t){var r=v[t];return r?r.cloneNode(!0):null}(t);if(e)return e;var n=r();return function(t,r){r&&(v[t]=r.cloneNode(!0))}(t,n),n},m=function(t,r){return"always"===t||"none"!==t&&!!r};function x(t,e){var n=null;return function(){var o=t.parent?t.opts:t,a=y(e(o));if(a!==n){n=a;var f=function(t,e){var n=void 0,o=void 0;"string"==typeof t?(n=JSON.parse(t),o=t):(n=i({},t),o=y(t));var a=function(t){return function(){var e=n[t];delete n[t];var o=r[t](e,n);return o?o.node[0]:null}};if(n.icon){var f=a("icon");return m(e,d.iconCache)?h(o,f):f()}var u=a("text");return m(e,d.textCache)?h(o,u):u()}(a,o.cache);if(f)t.root.firstChild?t.root.replaceChild(f,t.root.firstChild):t.root.appendChild(f)}}}var g=r.dom.css();function b(t){var r=l(t,"text");return r.text=(t.text||"").trim(),r}n.tag("font-awesome-icon","",g,"",function(t){var r=x(this,p);this.on("mount",r),this.on("update",r),this.parent||i(this,t)}),n.tag("font-awesome-text","","","",function(t){var r=x(this,b);this.on("mount",r),this.on("update",r),this.parent||i(this,t)}),n.tag2("font-awesome-layers",'<span class="{layerClass}" riot-style="{layerStyle}"> <yield></yield> </span>',"","",function(t){var r=this;r.layerStyle=t.layerStyle;var e=function(t){r.layerClass=t.fixedWidth?"fa-layers fa-fw":"fa-layers"};e(t),r.on("update",function(){r.parent&&(e(t),r.layerStyle=t.layerStyle)})}),r.noAuto();var w={clear:function(){v={}}};t.config=d,t.cache=w,Object.defineProperty(t,"__esModule",{value:!0})});
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@fortawesome/fontawesome'), require('sorted-json-stringify'), require('riot')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@fortawesome/fontawesome', 'sorted-json-stringify', 'riot'], factory) :
+	(factory((global.RiotFontAwesome = {}),global.FontAwesome,global.sortedJSONStringify,global.riot));
+}(this, (function (exports,fontawesome,sortedJSONStringify,riot) { 'use strict';
+
+fontawesome = fontawesome && fontawesome.hasOwnProperty('default') ? fontawesome['default'] : fontawesome;
+sortedJSONStringify = sortedJSONStringify && sortedJSONStringify.hasOwnProperty('default') ? sortedJSONStringify['default'] : sortedJSONStringify;
+riot = riot && riot.hasOwnProperty('default') ? riot['default'] : riot;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var toConsumableArray = function (arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+};
+
+function normalizeIconArgs(icon) {
+  if (!icon) {
+    return null;
+  }
+
+  if ((typeof icon === 'undefined' ? 'undefined' : _typeof(icon)) === 'object' && icon.prefix && icon.iconName) {
+    return icon;
+  }
+
+  if (Array.isArray(icon) && icon.length === 2) {
+    return { prefix: icon[0], iconName: icon[1] };
+  }
+
+  if (typeof icon === 'string') {
+    // Add: allow space-separated prefix
+    if (icon.indexOf(' ') !== -1) {
+      var arr = icon.split(' ');
+      return { prefix: arr[0], iconName: arr[1] };
+    }
+    return { prefix: 'fas', iconName: icon };
+  }
+}
+
+function classToArray(param) {
+  if (Array.isArray(param)) return param;
+  return String(param).trim().split(/[ \r\n\t\f]+/);
+}
+
+var convertors = {
+  spin: 'fa-spin',
+  pulse: 'fa-pulse',
+  border: 'fa-border',
+  fixedWidth: 'fa-fw',
+  listItem: 'fa-li',
+  flipHorizontal: 'fa-flip-horizontal',
+  flipVertical: 'fa-flip-vertical',
+  pull: function pull(val, arr) {
+    return arr.push('fa-pull-' + val);
+  },
+  size: function size(val, arr) {
+    return arr.push('fa-' + val);
+  },
+  rotation: function rotation(val, arr) {
+    return arr.push('fa-rotate-' + val);
+  }
+};
+
+function parseClasses(args) {
+  var ret = [];
+  Object.keys(convertors).forEach(function (key) {
+    var val = args[key];
+    if (!val) return;
+    var conversion = convertors[key];
+    if (typeof conversion === 'string') {
+      ret.push(conversion);
+      return;
+    }
+    // Assume typeof conversion === 'function'
+    conversion(val, ret);
+  });
+  return ret;
+}
+
+function parseTransform (param) {
+  // directly return
+  if ((typeof param === 'undefined' ? 'undefined' : _typeof(param)) === 'object') return param;
+  return fontawesome.parse.transform(param || '');
+}
+
+var ITEM_REGEX = /^([^:]+):(.*)$/;
+
+var parseItem = function parseItem(item, ret) {
+  var result = ITEM_REGEX.exec(item);
+  if (!result) return;
+  var key = result[1].trim();
+  var value = result[2].trim();
+  ret[key] = value;
+};
+
+function parseStyle(val) {
+  if (!val) return {};
+  if (typeof val !== 'string') return val;
+  var arr = val.split(';');
+  var ret = {};
+  arr.forEach(function (item) {
+    return parseItem(item, ret);
+  });
+  return ret;
+}
+
+function parseCommonArgs(target, mode) {
+  var classes = parseClasses(target);
+  classes.push.apply(classes, toConsumableArray(classToArray(target[mode + 'Class'] || '')));
+  classes.sort();
+  var transform = parseTransform(target.transform);
+  var styles = parseStyle(target[mode + 'Style']);
+  return { classes: classes, transform: transform, styles: styles };
+}
+
+function parseIconArgs(target) {
+  var args = parseCommonArgs(target, 'icon');
+  args.icon = normalizeIconArgs(target.icon);
+  args.mask = normalizeIconArgs(target.mask);
+  return args;
+}
+
+function argsToJSON(args) {
+  var replacer = function replacer(key, val) {
+    if (this === args && val && (key === 'icon' || key === 'mask')) {
+      return { prefix: val.prefix, iconName: val.iconName };
+    }
+    return val;
+  };
+  return sortedJSONStringify(args, replacer);
+}
+
+var config = {
+  iconCache: true,
+  textCache: false
+};
+
+// for object clear, using let
+var cache = {};
+
+function set$1(key, node) {
+  if (!node) return;
+  cache[key] = node.cloneNode(true);
+}
+
+function get$1(key) {
+  var value = cache[key];
+  if (value) return value.cloneNode(true);
+  return null;
+}
+
+function clear() {
+  cache = {};
+}
+
+var useCache = function useCache(key, callback) {
+  var cachedVal = get$1(key);
+  if (cachedVal) return cachedVal;
+  var value = callback();
+  set$1(key, value);
+  return value;
+};
+
+var cacheCanUsed = function cacheCanUsed(cacheParam, defaultValue) {
+  if (cacheParam === 'always') return true;
+  if (cacheParam === 'none') return false;
+  return !!defaultValue;
+};
+
+function generateDOM(args, cache) {
+  var copiedArgs = void 0,
+      argsJSON = void 0;
+  if (typeof args === 'string') {
+    copiedArgs = JSON.parse(args);
+    argsJSON = args;
+  } else {
+    copiedArgs = _extends({}, args);
+    argsJSON = argsToJSON(args);
+  }
+  var generateDOM = function generateDOM(type) {
+    return function () {
+      var key = copiedArgs[type];
+      delete copiedArgs[type];
+      var obj = fontawesome[type](key, copiedArgs);
+      return obj ? obj.node[0] : null;
+    };
+  };
+  if (copiedArgs.icon) {
+    var getIcon = generateDOM('icon');
+    if (cacheCanUsed(cache, config.iconCache)) {
+      return useCache(argsJSON, getIcon);
+    } else {
+      return getIcon();
+    }
+  } else {
+    var getText = generateDOM('text');
+    if (cacheCanUsed(cache, config.textCache)) {
+      return useCache(argsJSON, getText);
+    } else {
+      return getText();
+    }
+  }
+}
+
+function renderer(tag, parser) {
+  var oldArgsJSON = null;
+  return function () {
+    var target = tag.parent ? tag.opts : tag;
+    var args = parser(target);
+    var argsJSON = argsToJSON(args);
+    if (argsJSON === oldArgsJSON) return;
+    oldArgsJSON = argsJSON;
+    var dom = generateDOM(argsJSON, target.cache);
+    if (!dom) return;
+    var first = tag.root.firstChild;
+    if (first) {
+      tag.root.replaceChild(dom, tag.root.firstChild);
+    } else {
+      tag.root.appendChild(dom);
+    }
+  };
+}
+
+var css = fontawesome.dom.css();
+
+riot.tag('font-awesome-icon', '', css, '', function (opts) {
+  var tag = this;
+  var render = renderer(tag, parseIconArgs);
+  tag.on('mount', render);
+  tag.on('update', render);
+  if (!tag.parent) {
+    _extends(tag, opts);
+  }
+});
+
+function parseTextArgs(target) {
+  var args = parseCommonArgs(target, 'text');
+  args.text = (target.text || '').trim();
+  return args;
+}
+
+riot.tag('font-awesome-text', '', '', '', function (opts) {
+  var tag = this;
+  var render = renderer(tag, parseTextArgs);
+  tag.on('mount', render);
+  tag.on('update', render);
+  if (!tag.parent) {
+    _extends(tag, opts);
+  }
+});
+
+riot.tag2('font-awesome-layers', '<span class="{layerClass}" riot-style="{layerStyle}"> <yield></yield> </span>', '', '', function (opts) {
+  var tag = this;
+  tag.layerStyle = opts.layerStyle;
+  var applyClass = function applyClass(param) {
+    tag.layerClass = param.fixedWidth ? 'fa-layers fa-fw' : 'fa-layers';
+  };
+  applyClass(opts);
+  tag.on('update', function () {
+    if (!tag.parent) return;
+    applyClass(opts);
+    tag.layerStyle = opts.layerStyle;
+  });
+});
+
+fontawesome.noAuto();
+
+var cache$1 = { clear: clear };
+
+exports.config = config;
+exports.cache = cache$1;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

@@ -8,10 +8,10 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.0",
     "riot": "^3.0.0",
-    "sorted-json-stringify": "^0.0.2"
+    "sorted-json-stringify": "0.x"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && uglifyjs index.js -cm -o index.min.js",
     "version": "npm build"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-riot": "^2.0.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "uglify-es": "^3.3.9"
   },
   "babel": {
     "presets": [

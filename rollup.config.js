@@ -2,7 +2,6 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import riot from 'rollup-plugin-riot';
-import uglify from 'rollup-plugin-uglify';
 
 export default {
   input: 'src/entry.js',
@@ -10,8 +9,7 @@ export default {
     riot(),
     nodeResolve({ jsnext: true }),
     commonjs(),
-    babel(),
-    uglify()
+    babel()
   ],
   output: {
     file: 'index.js',
