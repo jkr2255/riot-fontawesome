@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 (2018/02/11)
+
+* Optimization: simplify information about no transformation
+
 ## 0.1.2 (2018/01/31)
 
 * Optimization: sort classes only once, on generation.

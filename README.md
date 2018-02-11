@@ -35,7 +35,7 @@ Once required, `<font-awesome-icon>` tag can be used. Parameters are:
 * `flip-horizontal=(truthy value)` ... flip icon horizontally.
 * `flip-vertical=(truthy value)` ... flip icon vertically.
 * `size=(md, lg, 2x...10x)` ... specify size of icon.
-* `rorarion=(degree)` ... rorate icon.
+* `rotation=(90, 180 or 270)` ... rotate icon.
 * `transform=(transform object or string)` ... apply transformation for icon.
 * `icon-class=(classes separated by space)` ... specify additonal classes to icon.
 * `icon-style=(inline css)` ... specify additional styles to icon.
@@ -90,6 +90,7 @@ So, there are some settings related to caches.
 ## TODO
 
 * Add automated test
+* Use SVG symbol
 
 ### Known problems
 
