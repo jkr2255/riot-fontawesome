@@ -186,7 +186,7 @@ function parseCommonArgs(target, mode) {
   var classes = parseClasses(target);
   classes.push.apply(classes, toConsumableArray(classToArray(target[mode + 'Class'] || '')));
   classes.sort();
-  var transform = parseTransform(target.transform);
+  var transform = target.transform ? parseTransform(target.transform) : null;
   var styles = parseStyle(target[mode + 'Style']);
   return { classes: classes, transform: transform, styles: styles };
 }
