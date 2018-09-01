@@ -18,12 +18,12 @@ export default {
     globals: {
       'sorted-json-stringify': 'sortedJSONStringify',
       riot: 'riot',
-      '@fortawesome/fontawesome': 'FontAwesome'
+      '@fortawesome/fontawesome-svg-core': 'FontAwesome'
     }
   },
   external: [
     'sorted-json-stringify',
     'riot',
-    '@fortawesome/fontawesome'
+    '@fortawesome/fontawesome-svg-core'
   ]
 };

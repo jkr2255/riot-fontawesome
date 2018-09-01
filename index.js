@@ -1,10 +1,9 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@fortawesome/fontawesome'), require('sorted-json-stringify'), require('riot')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@fortawesome/fontawesome', 'sorted-json-stringify', 'riot'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@fortawesome/fontawesome-svg-core'), require('sorted-json-stringify'), require('riot')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@fortawesome/fontawesome-svg-core', 'sorted-json-stringify', 'riot'], factory) :
 	(factory((global.RiotFontAwesome = {}),global.FontAwesome,global.sortedJSONStringify,global.riot));
-}(this, (function (exports,fontawesome,sortedJSONStringify,riot) { 'use strict';
+}(this, (function (exports,fontawesomeSvgCore,sortedJSONStringify,riot) { 'use strict';
 
-fontawesome = fontawesome && fontawesome.hasOwnProperty('default') ? fontawesome['default'] : fontawesome;
 sortedJSONStringify = sortedJSONStringify && sortedJSONStringify.hasOwnProperty('default') ? sortedJSONStringify['default'] : sortedJSONStringify;
 riot = riot && riot.hasOwnProperty('default') ? riot['default'] : riot;
 
@@ -158,7 +157,7 @@ function parseClasses(args) {
 function parseTransform (param) {
   // directly return
   if ((typeof param === 'undefined' ? 'undefined' : _typeof(param)) === 'object') return param;
-  return fontawesome.parse.transform(param || '');
+  return fontawesomeSvgCore.parse.transform(param || '');
 }
 
 var ITEM_REGEX = /^([^:]+):(.*)$/;
@@ -231,6 +230,8 @@ function clear() {
   cache = {};
 }
 
+var fontawesome = { icon: fontawesomeSvgCore.icon, text: fontawesomeSvgCore.text };
+
 var useCache = function useCache(key, callback) {
   var cachedVal = get$1(key);
   if (cachedVal) return cachedVal;
@@ -299,7 +300,7 @@ function renderer(tag, parser) {
   };
 }
 
-var css = fontawesome.dom.css();
+var css = fontawesomeSvgCore.dom.css();
 
 riot.tag('font-awesome-icon', '', css, '', function (opts) {
   var tag = this;
@@ -340,8 +341,6 @@ riot.tag2('font-awesome-layers', '<span class="{layerClass}" riot-style="{layerS
     tag.layerStyle = opts.layerStyle;
   });
 });
-
-fontawesome.noAuto();
 
 var cache$1 = { clear: clear };
 

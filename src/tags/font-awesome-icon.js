@@ -1,12 +1,12 @@
 'use strict';
 
-import fontawesome from '@fortawesome/fontawesome';
+import { dom } from '@fortawesome/fontawesome-svg-core';
 import riot from 'riot';
 
 import parseIconArgs from '../parsers/icon_args';
 import renderer from './renderer';
 
-const css = fontawesome.dom.css();
+const css = dom.css();
 
 riot.tag('font-awesome-icon', '', css, '', function(opts){
   const tag = this;

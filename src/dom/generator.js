@@ -1,4 +1,6 @@
-import fontawesome from '@fortawesome/fontawesome';
+import { icon, text } from '@fortawesome/fontawesome-svg-core';
+
+const fontawesome = {icon, text};
 
 import argsToJSON from '../utils/args_to_json';
 import config from '../config/config';

@@ -1,9 +1,9 @@
 'use strict';
 
-import fontawesome from '@fortawesome/fontawesome';
+import { parse } from '@fortawesome/fontawesome-svg-core';
 
 export default function(param){
   // directly return
   if(typeof param === 'object') return param;
-  return fontawesome.parse.transform(param || '');
+  return parse.transform(param || '');
 }
