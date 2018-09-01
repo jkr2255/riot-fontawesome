@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2018/09/01)
+
+* Updating dependencies for FontAwesome >= 5.1. See the [UPGRADING of FontAwesome](https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md#50x-to-510).
+* Optimization: avoid unnecessary `toConsumableArray`.
+
 ## 0.1.3 (2018/02/11)
 
 * Optimization: simplify information about no transformation

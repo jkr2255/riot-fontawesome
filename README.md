@@ -18,8 +18,14 @@ This module is a UMD module, so you can directly include from browser.
 ### Requirements
 
 * Riot.js 3.x
-* Font Awesome 5
+* Font Awesome >= 5.1
 * [jkr2255/sorted-json-stringify](https://github.com/jkr2255/sorted-json-stringify)
+
+### Upgrading from 0.1.x
+
+Riot-FontAwesome 0.2.0 requires FontAwesome 5.1.0 or upper, which includes incompatible change from 5.0.x.
+
+See the [UPGRADING of FontAwesome](https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md#50x-to-510).
 
 ## Usage
 
