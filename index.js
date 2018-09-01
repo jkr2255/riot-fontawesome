@@ -47,50 +47,6 @@ var _extends = Object.assign || function (target) {
   return target;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var toConsumableArray = function (arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  } else {
-    return Array.from(arr);
-  }
-};
-
 function normalizeIconArgs(icon) {
   if (!icon) {
     return null;
@@ -183,7 +139,7 @@ function parseStyle(val) {
 
 function parseCommonArgs(target, mode) {
   var classes = parseClasses(target);
-  classes.push.apply(classes, toConsumableArray(classToArray(target[mode + 'Class'] || '')));
+  classes.push.apply(classes, classToArray(target[mode + 'Class'] || ''));
   classes.sort();
   var transform = target.transform ? parseTransform(target.transform) : null;
   var styles = parseStyle(target[mode + 'Style']);

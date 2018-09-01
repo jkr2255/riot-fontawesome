@@ -7,7 +7,7 @@ import parseStyle from './style';
 
 export default function parseCommonArgs(target, mode) {
   const classes = parseClasses(target);
-  classes.push(...classToArray(target[mode + 'Class'] || ''));
+  classes.push.apply(classes, classToArray(target[mode + 'Class'] || ''));
   classes.sort();
   const transform = target.transform ? parseTransform(target.transform) : null;
   const styles = parseStyle(target[mode + 'Style']);
