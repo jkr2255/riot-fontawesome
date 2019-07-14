@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2019/07/14)
+
+* Upgrade build dependencies (due to security issues in lodash)
+
 ## 0.2.0 (2018/09/01)
 
 * Updating dependencies for FontAwesome >= 5.1. See the [UPGRADING of FontAwesome](https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md#50x-to-510).
